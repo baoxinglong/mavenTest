@@ -1,0 +1,33 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://172.24.107.154:3306/test?characterEncoding=utf8
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+    password: 9721
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    open-in-view: true
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+    hibernate:
+      ddl-auto: update
+  thymeleaf:
+    cache: false
+  redis:
+      host: 127.0.0.1
+      port: 6379
+      timeout: 1000000 # 连接超时
+      pool:
+        max-active: 100 # 连接池的最大活动连接数量
+        max-idle: 10 # 连接池的最大空闲连接数量
+        max-wait: 100000 # 连接池分配连接的等待时间
+
+
+
+      
